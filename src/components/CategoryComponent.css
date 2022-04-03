@@ -1,0 +1,12 @@
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 50%;
+}
+
+.poster-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}

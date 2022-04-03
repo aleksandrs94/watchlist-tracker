@@ -13,21 +13,7 @@ code {
     monospace;
 }
 
-.watched {
-	margin: 0 auto;
-	width: 30%;
-}
-
-.span {
-	float: left;
-}
-
-img {
-	border-right: 60px solid black;
-	border-left: 60px solid black;
-}
-
-.all {
-	margin: 0 auto;
-	width: 30%;
+.categories-list {
+  display: flex;
+  gap: 24px;
 }
