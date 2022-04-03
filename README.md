@@ -1,18 +1,10 @@
 ## JS/React app cleanup
 
-Jenny is a newbie developer that has decided to learn Javascript and React. She wrote this simple application to keep track of which movies she wants to see, and which ones she has seen.
+### To run application:
 
-She knows it is not great, and she has now asked you to take a look at it, to give feedback and pointers. She also wants to see how she could have done it in a better way.
-
-### Your task:
-
-1. **Create a git repo using this code.**
-2. **Add one commit with in-code comments, pointing out any bad patterns or strange choices made.**
-3. **Add any number of commits to make the application maintainable and better looking.**
-4. **Add any relevant instructions to run the app in the README.**
-5. **Push code to any git hosting providers like github or gitlab. Share the repo with us.**
-
-Do not spend more than two hours on this assignment. Keep it simple!
+1. **Clone git repo**
+2. **Run `npm install` to install the packages**
+3. **Run `npm start` to start the application**
 
 ---
 
