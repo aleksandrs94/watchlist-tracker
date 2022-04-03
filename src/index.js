@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+// For future I suggest to check out JavaScript es6 features - https://www.w3schools.com/js/js_es6.asp
+
 export function getWatchedMovies() {
 	var movies = localStorage.getItem('movies-watched');
 
@@ -39,10 +41,11 @@ export function getAllMovies() {
 	}
 }
 
+// Multiple params easy to miss order, maybe its better to pass an object as param and destructure it?
 export function add(title, description, image) {
 	var movie = {};
 	movie.title = title;
-	movie.description = description;
+	movie.description = description; // Bug - prop description doesn't exist on movie object
 	movie.image = image;
 
 	var movies = getAllMovies();
@@ -53,6 +56,7 @@ export function add(title, description, image) {
 	render();
 }
 
+// Same as on line 44
 export function addWatchedMovie(title, description, image) {
 	var movie = {};
 	movie.title = title;
@@ -70,8 +74,11 @@ export function addWatchedMovie(title, description, image) {
 export function removeWatchedMovie(title) {
 	var movies = getWatchedMovies();
 
+	// Check array splice, might be useful for this function - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 	for (var i = 0; i < movies.length; i++) {
 	   if (!movies[i]) continue;
+		// ESLint runtime warning - Expected '===' and instead saw '=='  eqeqeq
+		// It is recommended to always use strict equality check, makes result more predictable
 		if (movies[i].title == title) {
 			movies[i] = null
 		}
@@ -82,6 +89,8 @@ export function removeWatchedMovie(title) {
 	render();
 }
 
+// React components should automatically re-render whenever there is a change in state or props
+// I believe context API or Redux can deal with the issue here
 function render() {
 	ReactDOM.render(<App movies={getAllMovies()} watched={getWatchedMovies()} />, document.getElementById('root'))
 }
