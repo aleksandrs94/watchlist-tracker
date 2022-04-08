@@ -24,7 +24,9 @@ export const MoviePoster = (props) => {
         removeWatchedMovie(index);
         break;
       default:
-        return;
+        return new Error(
+          `getCallbackByType is missing case statement for ${type} category`
+        );
     }
   };
 

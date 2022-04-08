@@ -12,7 +12,9 @@ const App = (props) => {
       case "watched":
         return "Already watched";
       default:
-        return "";
+        return new Error(
+          `getCategoryTitle is missing case statement for ${type} category`
+        );
     }
   };
 
